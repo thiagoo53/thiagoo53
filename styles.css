@@ -65,13 +65,11 @@ nav a:hover {
 
 /* Hero */
 .hero {
-  height: 90vh;
+  height: 100vh;
   min-height: 600px;
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-bottom: 112px;
+  background: #1a1a1a;
 }
 
 .hero::before {
@@ -226,29 +224,29 @@ nav a:hover {
   min-height: 160px;
 }
 
-.footer-main {
+.contenido {
   flex: 1;
   display: flex;
   align-items: center;
 }
 
-.footer-main::before {
+.contenido::before {
   content: '';
   flex: 1;
 }
 
-.footer-segura {
+.segura {
   text-align: center;
 }
 
-.footer-segura img {
+.segura img {
   width: 40px;
   height: auto;
   display: block;
   margin: 0 auto 4px;
 }
 
-.footer-redes {
+.redes {
   flex: 1;
   text-align: right;
 }
@@ -273,7 +271,7 @@ nav a:hover {
   height: 20px;
 }
 
-.text-flooter {
+#pie-pagina p {
   color: #fff;
 }
 
@@ -304,7 +302,6 @@ nav a:hover {
   .hero {
     min-height: 300px;
     height: 50vh;
-    margin-bottom: 32px;
   }
 
   .catalogo,
@@ -359,18 +356,18 @@ nav a:hover {
     gap: 16px;
   }
 
-  .footer-main {
+  .contenido {
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
 
-  .footer-main::before {
+  .contenido::before {
     display: none;
   }
 
-  .footer-segura,
-  .footer-redes {
+  .segura,
+  .redes {
     text-align: center;
     margin-left: 0;
   }
