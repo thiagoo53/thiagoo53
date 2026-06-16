@@ -22,9 +22,25 @@ main {
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   padding: 32px 16px;
   background: #6b1d2a;
   border: 2px solid #4a1320;
+}
+
+.marca {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 nav ul {
@@ -182,6 +198,11 @@ nav a:hover {
   background: white;
   overflow: hidden;
   border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.look-card:hover {
+  transform: scale(1.04);
 }
 
 .look-card img {
@@ -208,8 +229,22 @@ nav a:hover {
 
 /* Responsive */
 @media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 20px 16px;
+  }
+
+  .marca {
+    position: static;
+    transform: none;
+    font-size: 18px;
+  }
+
   nav ul {
     gap: 16px;
+    justify-content: center;
   }
 
   nav a {
@@ -238,15 +273,32 @@ nav a:hover {
   }
 
   .lookbook > div {
-    gap: 12px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 4px 0 12px 0;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
 
-  .producto {
-    width: 100%;
-    max-width: 100%;
+  .lookbook > div::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .lookbook > div::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 2px;
+  }
+
+  .catalogo .producto {
+    flex: 0 0 calc(50% - 4px);
+    max-width: calc(50% - 4px);
   }
 
   .look-card {
-    width: calc(50% - 8px);
+    flex: 0 0 220px;
+    scroll-snap-align: start;
   }
 }
