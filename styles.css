@@ -15,7 +15,7 @@ p {
   color: #4a4a4a;
 }
 
-#contenido {
+main {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 16px;
@@ -47,6 +47,7 @@ nav a:hover {
   color: #e8b4b4;
 }
 
+/* Hero */
 .hero {
   height: 90vh;
   min-height: 600px;
@@ -72,23 +73,17 @@ nav a:hover {
   animation: roll 12s linear infinite;
 }
 
-.hero-slide {
+.slide {
   width: 25%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 }
 
-.slide-1 {
-  background-image: url('imagenes/hero/2-slide-1774035145428-5550877682-4ea0f9e54dd0e10bb102e3ee41322a001774035150-1920-1920.webp');
-}
-
-.slide-2 {
-  background-image: url('imagenes/hero/2-slide-1774035145429-130737756-631226e00cd4893cb68cccf0b6eb43c51774035150-1920-1920.webp');
-}
-
-.slide-3 {
-  background-image: url('imagenes/hero/2-slide-1774035145428-8434080703-add365eb52896b3bb20867bf585c26031774035149-1920-1920.webp');
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @keyframes roll {
@@ -96,14 +91,14 @@ nav a:hover {
   100% { transform: translateX(-75%); }
 }
 
-/* Secciones */
-.drop,
-.atuendos {
+/* Contenido */
+.catalogo,
+.lookbook {
   padding: 112px 0;
 }
 
-.drop h2,
-.atuendos h2 {
+.catalogo h2,
+.lookbook h2 {
   text-align: center;
   font-family: "Literata", Georgia, serif;
   font-size: 32px;
@@ -115,15 +110,22 @@ nav a:hover {
   color: #1a1a1a;
 }
 
-/* Grilla de productos */
-.grid-cubos {
+.catalogo > div {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lookbook > div {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 }
 
-.cubo {
+/* Productos */
+.producto {
   width: 280px;
   background: white;
   border-radius: 0;
@@ -134,25 +136,21 @@ nav a:hover {
   overflow: hidden;
 }
 
-.cubo img {
+.producto img {
   width: 100%;
   display: block;
 }
 
-.cubo:hover {
+.producto:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.drop .grid-cubos {
-  gap: 16px;
-}
-
-.drop .cubo {
+.catalogo .producto {
   flex: 1 1 280px;
   max-width: 340px;
 }
 
-.cubo h3 {
+.producto h3 {
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -165,7 +163,7 @@ nav a:hover {
   margin-bottom: 12px;
 }
 
-.etiqueta {
+.btn-comprar {
   display: inline-block;
   padding: 4px 16px;
   font-size: 12px;
@@ -175,16 +173,18 @@ nav a:hover {
   border-radius: 0;
   background: #2a2a2a;
   color: white;
+  text-decoration: none;
 }
 
 /* Atuendos */
-.cubo-vertical {
+.look-card {
   width: 220px;
-  padding-bottom: 0;
+  background: white;
+  overflow: hidden;
   border-radius: 20px;
 }
 
-.cubo-vertical img {
+.look-card img {
   width: 100%;
   display: block;
   object-fit: cover;
@@ -222,31 +222,31 @@ nav a:hover {
     margin-bottom: 32px;
   }
 
-  .drop,
-  .atuendos {
+  .catalogo,
+  .lookbook {
     padding: 40px 0;
   }
 
-  .drop h2,
-  .atuendos h2 {
+  .catalogo h2,
+  .lookbook h2 {
     font-size: 24px;
     margin-bottom: 24px;
   }
 
-  .grid-cubos {
-    gap: 12px;
-  }
-
-  .drop .grid-cubos {
+  .catalogo > div {
     gap: 8px;
   }
 
-  .cubo {
+  .lookbook > div {
+    gap: 12px;
+  }
+
+  .producto {
     width: 100%;
     max-width: 100%;
   }
 
-  .cubo-vertical {
+  .look-card {
     width: calc(50% - 8px);
   }
 }
